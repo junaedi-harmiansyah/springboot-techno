@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="adminproprties">
+
+<title>Admin Home</title>
+<!--CSS File-->
+<!-- Font Awesome -->
+<link rel="stylesheet" th:href="@{/assets/css/font-awesome440.min.css}">
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+<!-- Font Awesome -->
+<link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+<!-- Ionicons -->
+<link rel="stylesheet" th:href="@{/assets/css/ionicons.min.css}">
+<!-- DataTables -->
+<link rel="stylesheet"
+	th:href="@{/assets/css/dataTables.bootstrap.min.css}">
+<!-- bootstrap datepicker -->
+<link rel="stylesheet"
+	th:href="@{/assets/css/bootstrap-datepicker.min.css}">
+<!-- Theme style -->
+<link rel="stylesheet" th:href="@{/assets/css/AdminLTE.min.css}">
+<!-- AdminLTE Skins -->
+<link rel="stylesheet" th:href="@{/assets/css/skin-black.min.css}">
+<!-- Google font -->
+<link rel="stylesheet" th:href="@{/assets/css/fonts.googleapis.css}">
+
+<!-- JS File -->
+<!-- jQuery 3 -->
+<script type="text/javascript" th:src="@{/assets/js/jquery.min.js}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script type="text/javascript" th:src="@{/assets/js/bootstrap.min.js}"></script>
+<!-- DataTables -->
+<script type="text/javascript"
+	th:src="@{/assets/js/jquery.dataTables.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/js/dataTables.bootstrap.min.js}"></script>
+<!-- bootstrap datepicker -->
+<script type="text/javascript"
+	th:src="@{/assets/js/bootstrap-datepicker.min.js}"></script>
+<!-- AdminLTE App -->
+<script type="text/javascript" th:src="@{/assets/js/adminlte.min.js}"></script>
+<script type="text/javascript"
+	th:src="@{/assets/js/jquery.serializejson.js}"></script>
+<!-- Notify -->
+<script type="text/javascript" th:src="@{/assets/js/notify.min.js}"></script>
+
+<!-- Plugin File -->
+<!-- Bootstrap WYSIHTML5 -->
+<script type="text/javascript"
+	th:src="@{/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js}"></script>
+<!-- iCheck -->
+<link rel="stylesheet" th:href="@{/assets/plugins/iCheck/flat/blue.css}">
+<!-- jvectormap -->
+<link rel="stylesheet"
+	th:href="@{/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css}">
+<!-- bootstrap wysihtml5 - text editor -->
+<link rel="stylesheet"
+	th:href="@{/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css}">
+
+<!-- dist file -->
+<!-- skin -->
+<link rel="stylesheet"
+	th:href="@{/assets/dist/css/skins/_all-skins.min.css}">
+</head>
+
+
+<body class="hold-transition skin-white sidebar-lg">
+	<div id="txt"></div>
+	<div class="wrapper">
+
+		<header class="main-header" onload="">
+			<!-- Logo -->
+
+			<a href="#" class="logo"> <span class="logo-mini"><b>M</b></span>
+				<!-- logo for regular state and mobile devices --> <span
+				class="logo-lg"><b>MENU</b></span>
+			</a>
+
+			<!-- Header Navbar -->
+			<nav class="navbar navbar-static-top" role="navigation">
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu"
+					role="button"> <span class="sr-only">Toggle navigation</span>
+				</a>
+				<!-- Navbar Right Menu -->
+				<div class="navbar-custom-menu">
+					<ul class="nav navbar-nav">
+						<li class="dropdown user-menu "><a href="#"
+							class="dropdown-toggle" data-toggle="dropdown"> <img
+								th:src="@{/assets/img/employer-login.jpg}" class="user-image"
+								alt="User Image"> <span
+								sec:authentication="principal.username">user</span>
+						</a></li>
+
+					</ul>
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a th:href="@{/home}"
+							class="fa fa-id-card-o" style="font-size: 40px;"></a></li>
+					</ul>
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a href="#" data-toggle="modal"
+							data-target="#signOut" class="fa fa-sign-out"
+							style="font-size: 40px; color: red"></a></li>
+					</ul>
+
+				</div>
+			</nav>
+		</header>
+		<!-- Left side column. contains the logo and sidebar -->
+		<aside class="main-sidebar ">
+			<!-- sidebar: style can be found in sidebar.less -->
+			<section class="sidebar">
+				<ul class="sidebar-menu">
+					<li><a href="index.jsp"><i class="fa fa-home"
+							style='font-size: 48px; color: black'></i><span><h4>Home</h4></span></a></li>
+					<li><a th:href="@{/product}"><i class="fa fa-database"
+							style='font-size: 48px; color: gold'></i>
+							<h4>Product</h4></a></li>
+					<li><a href="finance"><i class="fa fa-money"
+							style='font-size: 48px; color: red'></i>
+							<h4>Finance</h4></a></li>
+					<li><a href="user"><i class="fa fa-address-card"
+							style='font-size: 48px; color: blue'></i><span><h4>User</h4></span></a></li>
+					<li><a href="market"><i class="fa fa-bullhorn"
+							style='font-size: 48px; color: green'></i><span><h4>Market</h4></span></a></li>
+				</ul>
+			</section>
+			<!-- /.sidebar -->
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section layout:fragment="content-header">
+				<h1>
+					<decorator:title></decorator:title>
+				</h1>
+			</section>
+
+			<!-- Main content -->
+			<section layout:fragment="content">
+				<decorator:body></decorator:body>
+			</section>
+			<!-- /.content -->
+		</div>
+		<!-- /.content-wrapper -->
+		<footer class="main-footer">
+			<div class="pull-right hidden-xs">
+				<b>Version</b> 1.0.0
+			</div>
+			<strong>Copyright &copy; 2019 <a href="#">Juna
+					Technology</a>.
+			</strong>All rights reserved.
+		</footer>
+		<div class="control-sidebar-bg"></div>
+	</div>
+	<!-- ./wrapper -->
+	<!-- form sign out -->
+	<form id="form-signOut">
+		<div class="modal fade" id="signOut">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Sign Out</h4>
+						<div class="modal-body">
+							<div class="row">
+								<div class="col-xs-12">
+									<h4>
+										<center>
+											<label>Sign out dari halaman ini!</label>
+									</h4>
+									</center>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-primary pull-left"
+								data-dismiss="modal">Cancel</button>
+							<a th:href="@{/logout}"><button type="button"
+									class="btn btn-primary" sec:authorize="isAuthenticated()">
+									Ok</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+
+</html>
