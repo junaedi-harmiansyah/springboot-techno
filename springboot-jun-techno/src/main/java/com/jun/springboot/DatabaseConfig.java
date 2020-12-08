@@ -9,6 +9,8 @@ import org.springframework.context.annotation.Configuration;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
+
+//to do class configuration database heroku
 @Configuration
 public class DatabaseConfig {
 
