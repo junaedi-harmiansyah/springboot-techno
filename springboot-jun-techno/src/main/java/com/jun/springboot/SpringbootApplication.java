@@ -8,7 +8,7 @@ public class SpringbootApplication
 {
 	public static void main(String[] args)
 	{
-		//main class for run project
+		//main class for run project b
 		SpringApplication.run(SpringbootApplication.class, args);
 		
 	}
